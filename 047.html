@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicico046_javaScript</title>
+    <script lang="JavaScript">
+        const myfuncion = function ()
+        {
+            var resultado ="SI";
+            document.getElementById("divresultado").innerText="";
+            document.getElementById("codigojavascript").innerHTML="";
+
+
+                var numero = document.getElementById("entrada").value;
+                var patron = /^\d+$/; //Expresión regular para aceptar solo números enteros
+               
+                if (patron.test(numero)) {    
+                    
+                    var caracter = numero.charAt(0);        
+                    for (var i = 1; i< numero.length; i++) {
+                        var nuevocaracter = numero.charAt(i);
+                        if (caracter != nuevocaracter)
+                        {
+                            resultado="NO";
+                                    break;
+                        }
+                    }
+                   
+                }else {
+                alert("el valor del número debe ser entero positivo");
+                numero.focus();
+                return (false);
+                }
+                document.getElementById("divresultado").innerText ="Los digitos "+ resultado + " son todos iguales";
+  
+
+                /* visualizacion */
+                document.getElementById("codigojavascript").innerHTML=  "<pre>" + myfuncion + "</pre>";
+        }    
+
+    </script>
+</head>
+<body>
+    <p class="textoejercicio">R:14 047 Escriba un programa JavaScript para comprobar si todos los dígitos de un número dado son iguales o no.
+    </p>
+     
+   <input type="number" min="0" max="99999999999" id="entrada">
+
+
+    <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion()"><br>
+     
+    <div id="divresultado"></div>
+    <br>
+    <div id="codigojavascript"></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicico046_javaScript</title>
+    <script lang="JavaScript">
+        const myfuncion = function ()
+        {
+           
+           const ruta = "/var/log/mysql/error.log";
+
+           let str =ruta;
+
+           document.getElementById("divresultado").innerHTML= str + "<br>";;
+
+           let posicionultimopunto =  str.lastIndexOf("/") ;
+           do {
+            posicionultimopunto =  str.lastIndexOf("/") ;
+         
+           
+            document.getElementById("divresultado").innerHTML+=str.substring(posicionultimopunto + 1) + "<br>";
+            
+            str = str.substring(0,posicionultimopunto );
+              
+            } while (str!="" && posicionultimopunto >0);
+
+
+         
+
+ 
+
+                /* visualizacion */
+                document.getElementById("codigojavascript").innerHTML=  "<pre>" + myfuncion + "</pre>";
+        }    
+
+    </script>
+</head>
+<body>
+    <p class="textoejercicio">049 Escriba un programa JavaScript para simplificar una ruta absoluta dada para un archivo en estilo Unix.
+    </p>
+
+    <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion()"><br>
+     
+    <div id="divresultado"></div>
+    <br>
+    <div id="codigojavascript"></div>
+
+
+
+</body>
+</html>

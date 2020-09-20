@@ -1,0 +1,86 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicico046_javaScript</title>
+    <script lang="JavaScript">
+
+
+
+
+        const myfuncion = function (valor) {
+
+
+            let url = document.getElementById("txturl").value;
+            let matriz = new Array();
+
+            let url1 = url.substr(url.indexOf("://") + 3, url.length);
+            matriz = url1.split("/");
+
+            if (url.indexOf("://") != -1)
+                matriz.splice(0, 0, url.substr(0, url.indexOf("://") + 3));
+
+
+
+
+
+            /* visualizacion */
+            for (i = 0; i < matriz.length; i++) {
+                let li = document.createElement("li");
+                li.innerText = matriz[i];
+                document.getElementById("lista").appendChild(li);
+            }
+
+         //   document.getElementById("codigojavascript").innerHTML = "<pre> var myfuncion  = " + myfuncion + "</pre>";
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <p class="textoejercicio">051 Escriba un programa JavaScript para romper la dirección de una URL y poner su parte en
+        una matriz. Nota: estructura de la URL: //.org [/] y es posible que no haya parte en la dirección.
+    </p>
+
+    <input type="text" id="txturl" style="width:80%" value="https://www.w3schools.com/js/js_array_methods.asp"> <br>
+
+    <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion(0)"><br>
+
+    <div id="divresultado">
+        <ul id="lista"></ul>
+    </div>
+    <br>
+    <div id="codigojavascript"></div>
+
+    <div style="width:80%; height: 100%;">
+        <pre>
+        const myfuncion = function     ( valor)
+        {
+
+
+            let url = document.getElementById("txturl").value;
+            let matriz=new Array();
+          
+            let url1 =  url.substr(url.indexOf("://")+3, url.length);
+            matriz = url1.<strong>split</strong>("/");
+
+            if (url.indexOf("://") != -1)
+                matriz.<strong>splice</strong>(0, 0,   url.substr(0,url.indexOf("://")+3));
+
+            /* visualizacion */
+            for ( i=0;i&lt;matriz.length;i++) {
+                let li = document.createElement("li");
+                li.innerText=matriz[i];
+                document.getElementById("lista").appendChild(li);
+            }
+        }
+    </pre>
+    </div>
+
+</body>
+
+</html>

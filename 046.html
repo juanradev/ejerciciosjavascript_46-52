@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicico046_javaScript</title>
+    <script lang="JavaScript">
+        const obtnerextension = function ()
+        {
+                
+                var pathfichero = document.getElementById("myFile").value;
+                if (!(document.getElementById("myFile").value))
+                {   alert ("selecciona un archivo");
+                    document.getElementById("myFile").click();
+                    return (false);
+                } 
+                
+                var posicionultimopunto = pathfichero.lastIndexOf(".");
+                var resultado = pathfichero.substring(posicionultimopunto + 1);
+                if (posicionultimopunto < 0) 
+                {
+                    document.getElementById("divresultado").innerText ="El fichero seleccionado no tiene extensión";
+                }
+                else 
+                {    document.getElementById("divresultado").innerText ="La extensión del archivo es " + resultado;
+                }
+
+
+                /* visualizacion */
+                document.getElementById("codigojavascript").innerHTML=  "<pre>" + obtnerextension + "</pre>";
+        }    
+
+    </script>
+</head>
+<body>
+    <p class="textoejercicio">046 Escriba un ejercicio de JavaScript para obtener la extensión de un nombre de archivo.
+    </p>
+     
+    <input type="file" id="myFile" required><br>
+    <input type="button" id="btn" name="btn" value="extensión" onclick="obtnerextension()"><br>
+     
+    <div id="divresultado"></div>
+    <br>
+    <div id="codigojavascript"></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicico046_javaScript</title>
+    <script lang="JavaScript">
+        const myfuncion = function ()
+        {
+            let arraynumeros1 = new Array();
+            let arraynumeros2 = new Array();
+
+            let n1 = Math.round( (Math.random () * 100));
+            let n2 = Math.round( (Math.random () * 100));
+for (let i=0;i< n1; i ++){
+
+    arraynumeros1.push (Math.round( (Math.random () * 100)));
+}
+           
+for (let i=0;i< n2; i ++){
+
+arraynumeros2.push (Math.round( (Math.random () * 100)));
+}
+           
+ 
+            document.getElementById("divresultado").innerText="";
+
+            document.getElementById("divresultado").innerHTML="Array 1: <br>" + arraynumeros1;
+            document.getElementById("divresultado").innerHTML+="<br>";
+            document.getElementById("divresultado").innerHTML+="Elementos de Array 1: " + arraynumeros1.length;
+            document.getElementById("divresultado").innerHTML+="<br>";
+            document.getElementById("divresultado").innerHTML+="Array 2: <br>" + arraynumeros2;
+            document.getElementById("divresultado").innerHTML+="<br>";
+            document.getElementById("divresultado").innerHTML+="Elementos de Array 2: " + arraynumeros2.length;
+
+                /* visualizacion */
+                document.getElementById("codigojavascript").innerHTML=  "<pre>" + myfuncion + "</pre>";
+        }    
+
+    </script>
+</head>
+<body>
+    <p class="textoejercicio">R:140 048 Escriba un programa de JavaScript para encontrar la cantidad de elementos que se presentan en ambos arreglos dados</p>
+
+    <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion()"><br>
+     
+    <div id="divresultado"></div>
+    <br>
+    <div id="codigojavascript"></div>
+
+
+
+</body>
+</html>

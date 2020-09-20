@@ -1,0 +1,43 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicico046_javaScript</title>
+    <script lang="JavaScript">
+        const myfuncion = function ()
+        {
+
+        
+
+           var arraycadenas = ["la mas larga","casa", "arbol", "caserio", "pepe", "roma", "a", "romo", "cero"];
+           document.getElementById("divresultado").innerHTML = arraycadenas + "<br>";
+
+
+           arraycadenas.sort(function(a, b){return a.length-b.length});
+           document.getElementById("divresultado").innerHTML += arraycadenas;
+
+                /* visualizacion */
+                document.getElementById("codigojavascript").innerHTML=  "<pre>" + myfuncion + "</pre>";
+        }    
+
+    </script>
+</head>
+<body>
+    <p class="textoejercicio">050 Escriba un programa JavaScript para ordenar las cadenas de una matriz dada de cadenas en el orden de longitudes crecientes. Nota: No cambie el orden si las longitudes de dos cadenas son iguales.
+    </p>
+
+    <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion()"><br>
+     
+    <div id="divresultado"></div>
+    <br>
+    <div id="codigojavascript"></div>
+
+
+
+</body>
+</html>

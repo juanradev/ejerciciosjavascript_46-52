@@ -1,0 +1,63 @@
+
+
+ 
+
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicico046_javaScript</title>
+    <script lang="JavaScript">
+
+        var elemento =  Math.round(Math.random() * 20) ;
+        var suma=0;
+        let elementos = new Array();
+       
+        const myfuncion = function     ( valor)
+        {
+            if (suma==0) {
+                elementos = [];
+                elemento =  Math.round(Math.random() * 20) 
+            }
+
+            let cubo = valor*valor*valor;
+            elementos.push(cubo);
+            suma = suma + cubo ;
+
+            if ( valor  < elemento)
+            {
+                
+                valor++;
+                myfuncion (valor);
+            }
+            else
+               { 
+
+                document.getElementById("divresultado").innerHTML= "Número base: " +elemento  + "<br>";
+                document.getElementById("divresultado").innerHTML+= "cubos: " + elementos + "<br>"; 
+                   
+                   document.getElementById("divresultado").innerHTML+="Número Máximo: " + suma + "<br>"; 
+                 /* visualizacion */
+                 document.getElementById("codigojavascript").innerHTML=  "<pre> var myfuncion  = "+ myfuncion + "</pre>";
+                 suma=0;
+               }
+        }
+
+   
+
+    </script>
+</head>
+<body>
+    <p class="textoejercicio">053 Escriba un programa JavaScript para calcular la suma de cubos de todos los enteros desde 1 hasta un entero dado.
+    </p>
+
+    <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion(0)"><br>
+     
+    <div id="divresultado"></div>
+    <br>
+    <div id="codigojavascript"></div>
+
+
+
+</body>
+</html>
